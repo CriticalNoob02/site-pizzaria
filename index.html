@@ -13,13 +13,8 @@
 
     <!-- link css -->
     <link rel="stylesheet" href="index.css">
-
-    <script src="index.js"></script>
 </head>
 <body>
-
-    <!-- a  -->
-
     <header>
         <a href="#" class="logo">LoGo<span>.</span></a>
 
@@ -31,6 +26,13 @@
             <li><a href="#cozinheiros" onclick="toggleMenu()">Cozinheiros</a></li>
             <li><a href="#depoimento" onclick="toggleMenu()">Depoimentos</a></li>
             <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
+            <li><input type="checkbox" id="dark">
+                <label for="dark" class="label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+            </li>
         </ul>
     </header>
 
@@ -92,8 +94,9 @@
                         <img src="./media/menu1.jpg">
                     </div>
                     <div class="text">
-                        <h3>Salada do Caraio</h3>
+                        <h3>Salada 1</h3>
                     </div>
+                    <div class="risco"></div>
                 </div>
 
                 <div class="box">
@@ -101,8 +104,9 @@
                         <img src="./media/menu2.jpg">
                     </div>
                     <div class="text">
-                        <h3>Sopa de Macaco</h3>
+                        <h3>Sopa 1</h3>
                     </div>
+                    <div class="risco"></div>
                 </div>
 
                 <div class="box">
@@ -110,8 +114,9 @@
                         <img src="./media/menu3.jpg">
                     </div>
                     <div class="text">
-                        <h3>Massa de Piroca</h3>
+                        <h3>Massa 1</h3>
                     </div>
+                    <div class="risco"></div>
                 </div>
 
                 <div class="box">
@@ -119,8 +124,9 @@
                         <img src="./media/menu4.jpg">
                     </div>
                     <div class="text">
-                        <h3>Salada do Caraio</h3>
+                        <h3>Salada 2</h3>
                     </div>
+                    <div class="risco"></div>
                 </div>
 
                 <div class="box">
@@ -128,8 +134,9 @@
                         <img src="./media/menu5.jpg">
                     </div>
                     <div class="text">
-                        <h3>Sopa de Macaco</h3>
+                        <h3>Sopa 2</h3>
                     </div>
+                    <div class="risco"></div>
                 </div>
 
                 <div class="box">
@@ -137,8 +144,9 @@
                         <img src="./media/menu6.jpg">
                     </div>
                     <div class="text">
-                        <h3>Massa de Piroca</h3>
+                        <h3>Massa 2</h3>
                     </div>
+                    <div class="risco"></div>
                 </div>
 
                 <div class="title">
@@ -217,7 +225,7 @@
                             Consectetur amet labore quas quisquam aliquam illum magnam soluta impedit recusandae animi, tempore dolor temporibus inventore pariatur dolorum.
                             Deleniti assumenda dolorem reprehenderit.
                         </p>
-                        <h3>Alguem que comeu!</h3>
+                        <h3>Um Aleatório</h3>
                     </div>
                 </div>
 
@@ -266,16 +274,16 @@
             <form>
                 <h3>Envie uma mensagem para a gente!</h3>
                 <div class="inputBox">
-                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Nome" id="inputNome" class="success">
                 </div>
                 <div class="inputBox">
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" id="inputEmail">
                 </div>
                 <div class="inputBox">
-                    <textarea placeholder=" Sua Mensagem"></textarea>
+                    <textarea placeholder=" Sua Mensagem" id="inputMensagem"></textarea>
                 </div>
                 <div class="inputBox">
-                    <input type="submit" value="Enviar" class="btn2">
+                    <input type="submit" value="Enviar" class="btn2" onclick="enviar()">
                 </div>
             </form>
 
@@ -284,9 +292,14 @@
 
     <footer>
         <div>
-            <p>∞ Criado por <a href="https://github.com/CriticalNoob02">CriticalNoob02</a> ∞</p>
+            <p>Criado por <a href="https://github.com/CriticalNoob02" target="_blank">CriticalNoob02</a></p>
+            <div class="imgBox"></div>
         </div>
     </footer>
 
+    <script src="index.js"></script>
+
+    <!-- Link dos Icones -->
+    <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 </body>
 </html>

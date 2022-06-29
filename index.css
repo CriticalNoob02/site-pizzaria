@@ -9,6 +9,50 @@
     scroll-behavior: smooth;
 }
 
+:root
+{
+    --body-bg: #fff;
+    --text-p: #111;
+    --header-sticky-bg: #fff;
+    --header-sticky-logo: #111;
+    --header-stick-a: #111;
+    --header-input-bg: #111;
+    --header-input-ball: #fff;
+    --sobre-titleAbout: #111;
+    --menu-bg: #fff;
+    --chefs-h3: #111;
+    --depoimento-title: #fff;
+    --depoimento-box: #fff;
+    --depoimento-text-p: #666;
+    --form-bg: url(./media/bg3.jpg);
+
+    --gradient: linear-gradient(transparent, #ff01561b) ;
+}
+
+body
+{
+    background-color: var(--body-bg);
+    transition: 0.5s;
+}
+
+body.darkMod
+{
+    --body-bg: #121212;
+    --text-p: #F0F2F2;
+    --header-sticky-bg: #131313;
+    --header-sticky-logo: #F0F2F2;
+    --header-stick-a: #F0F2F2;
+    --header-input-bg: #fff;
+    --header-input-ball: #111;
+    --sobre-titleAbout: #F0F2F2;
+    --menu-bg: #F0F2F2;
+    --chefs-h3: #F0F2F2;
+    --depoimento-title: #F0F2F2;
+    --depoimento-box: #111;
+    --depoimento-text-p: #999;
+    --form-bg: url(./media/bg3_dark.png);
+}
+
 ::-webkit-scrollbar
 {
 
@@ -24,7 +68,21 @@
 p
 {
     font-weight: 300;
-    color: #111;
+    color: var(--text-p);
+    user-select: none;
+    transition: 0.5s;
+}
+
+h2
+{
+    user-select: none;
+    transition: 0.5s;
+}
+
+h3
+{
+    user-select: none;
+    transition: 0.5s;
 }
 
 section
@@ -50,7 +108,7 @@ header
 
 header.sticky
 {
-    background-color: #fff;
+    background-color: var(--header-sticky-bg);
     padding: 10px 100px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
@@ -65,7 +123,7 @@ header .logo
 
 header.sticky .logo
 {
-    color: #111;
+    color: var(--header-sticky-logo);
 }
 
 header .logo span
@@ -94,12 +152,62 @@ header .navigation a
 
 header.sticky .navigation a
 {
-    color: #111;
+    color: var(--header-stick-a);
 }
 
 header .navigation a:hover
 {
     color: #ff0157;
+    text-shadow: 0px -1px 15px rgba(255,1,87,0.55);
+
+}
+
+header .navigation #dark
+{
+    display: none;
+    transition: 0.5s;
+}
+
+header .navigation li .label
+{
+    background: var(--header-input-bg);
+    border-radius: 50px;
+    cursor: pointer;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 25px;
+    width: 50px;
+    transform: scale(1.1);
+}
+
+
+header .navigation li .ball
+{
+    background: var(--header-input-ball);
+    border-radius: 50px;
+    position: absolute;
+    top: 1.8px;
+    left: 2.5px;
+    height: 21px;
+    width: 21px;
+    transition: 0.5s;
+}
+
+header .navigation #dark:checked + .label .ball
+{
+    transform: translateX(24px);
+}
+
+header .fa-moon
+{
+    color: #A99EAA;
+}
+
+header .fa-sun
+{
+    color: #f49e12;
 }
 
                                 /* Banner Principal */
@@ -170,7 +278,7 @@ header .navigation a:hover
 
 .titleAbout
 {
-    color: #111;
+    color: var(--sobre-titleAbout);
     font-size: 2em;
     font-weight: 300;
 }
@@ -223,8 +331,9 @@ header .navigation a:hover
 {
     width: 340px;
     margin: 20px;
-    border: 15px solid rgba(252, 252, 252, 0.8);
+    border: 15px solid var(--menu-bg);
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+    background: var(--menu-bg);
 }
 
 .menu .content .box .imgBox
@@ -255,6 +364,19 @@ header .navigation a:hover
     color: #111;
 }
 
+.menu .content .box .risco 
+{
+    width: 0%;
+    height: 0.3vh;
+    color: #ff0157;
+    background: #ff0157;
+    transition: 0.5s;
+}
+
+.menu .content .box:hover .risco
+{
+    width: 100%;
+} 
                                 /* Aba dos "Chefs" */
 
 .cozinheiros .content
@@ -297,7 +419,7 @@ header .navigation a:hover
 .cozinheiros .content .box .text h3
 {
     font-weight: 400;
-    color: #111;
+    color: var(--chefs-h3);
 }
 
                                 /* Aba de "Depoimentos" */
@@ -311,7 +433,7 @@ header .navigation a:hover
 .white .titleAbout,
 .white p
 {
-    color: #fff;
+    color: var(--depoimento-title);
 }
 
 .depoimento .content
@@ -328,11 +450,12 @@ header .navigation a:hover
     width: 340px;
     margin: 20px;
     padding: 40px;
-    background: #fff;
+    background: var(--depoimento-box);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 0.5s;
 }
 
 .depoimento .content .box .imgBox
@@ -343,6 +466,12 @@ header .navigation a:hover
     margin-bottom: 20px;
     border-radius: 50%;
     overflow: hidden;
+    transition: 0.5s;
+}
+
+.depoimento .content .box:hover .imgBox
+{
+    transform: scale(1.3);
 }
 
 .depoimento .content .box .imgBox img
@@ -358,13 +487,18 @@ header .navigation a:hover
 .depoimento .content .box .text
 {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .depoimento .content .box .text p
 {
-    color: #666;
+    color: var(--depoimento-text-p);
     font-style: italic;
 }
+
 
 .depoimento .content .box .text h3
 {
@@ -374,12 +508,20 @@ header .navigation a:hover
     font-weight: 600;
 }
 
+.depoimento .content .box:hover .text h3
+{
+    color: #ff3477;
+    text-shadow: 0px -1px 15px rgba(255,1,87,0.55);
+}
+
+
                                 /* Aba "Contatos" */
 
 .contato
 {
-    background: url(./media/bg3.jpg);
+    background: var(--form-bg);
     background-size: cover;
+    transition: 0.5s;
 }
 
 .contato form
@@ -404,6 +546,8 @@ header .navigation a:hover
     position: relative;
     width: 100%;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .contato form .inputBox input,
@@ -438,15 +582,18 @@ header .navigation a:hover
 
 footer div
 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 20px 40px;
+    padding: 15px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 footer div p
 {
-    color: #333;
+    color: #999;
 }
 
 footer div a
@@ -454,6 +601,17 @@ footer div a
     color: #ff0157;
     text-decoration: none;
     font-weight: 500;
+}
+
+footer div .imgBox
+{
+    width: 2vw;
+    height: 2vh;
+    background: url(./media/Selo.png);
+    background-size: cover;
+    background-position: center;
+    border: none;
+
 }
 
                                 /* Adaptando tela  */
@@ -487,7 +645,8 @@ footer div a
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: #fff;
+        background: var(--header-sticky-bg);
+        transition: 0.5s;
     }
 
     
@@ -498,7 +657,7 @@ footer div a
 
     header .navigation a 
     {
-        color: #111;
+        color: var(--header-stick-a);
         font-size: 1.7em;
     }
 
