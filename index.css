@@ -25,8 +25,7 @@
     --depoimento-box: #fff;
     --depoimento-text-p: #666;
     --form-bg: url(./media/bg3.jpg);
-
-    --gradient: linear-gradient(transparent, #ff01561b) ;
+    --header-sticky-toggle: invert(1);
 }
 
 body
@@ -51,6 +50,7 @@ body.darkMod
     --depoimento-box: #111;
     --depoimento-text-p: #999;
     --form-bg: url(./media/bg3_dark.png);
+    --header-sticky-toggle: invert(0);
 }
 
 ::-webkit-scrollbar
@@ -698,7 +698,7 @@ footer div .imgBox
 
     header.sticky .menuToggle
     {
-        filter: invert(1);
+        filter: var(--header-sticky-toggle);
     }
      
     .banner .content h2 
