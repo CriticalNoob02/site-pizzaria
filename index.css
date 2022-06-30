@@ -222,6 +222,7 @@ header .fa-sun
     align-items: center;
     background: url(./media/bg.jpg);
     background-size: cover;
+    background-position: center;
 }
 
 .banner .content{
@@ -512,6 +513,19 @@ header .fa-sun
 {
     color: #ff3477;
     text-shadow: 0px -1px 15px rgba(255,1,87,0.55);
+}
+
+                                /* Aba Mapa */
+
+.mapa
+{
+    padding-top: 50px;
+}
+
+.mapa iframe
+{
+    border: 10px solid #ff0157;
+    border-radius: 25px 20px;
 }
 
 
